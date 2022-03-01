@@ -13,6 +13,10 @@ const person = {
 }
 
 // setTimeout(/** ここに追記 */, 1000);
+setTimeout(function() {
+    const hello = person.hello();
+    console.log(hello);
+},1000)
 
 /**
  * 問題２：
@@ -25,7 +29,10 @@ const person = {
  * 示する関数です。
  */
 
-
+// setTimeout(function() {
+//     const hello = person.hello();
+//     alert(hello);
+// },1000)
 /**
  * 問題３：
  * objにgreetingというメソッドを実装しました。
