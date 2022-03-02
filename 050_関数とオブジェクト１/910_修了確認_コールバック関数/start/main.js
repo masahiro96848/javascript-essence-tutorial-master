@@ -53,7 +53,7 @@ function after1s(callack) {
 }
 
 // この時点で実行します。
-// after1s(obj.greeting);
+after1s(obj.greeting);
 
 // この後でgreetingを書き換えます。
 obj.greeting = function() {
@@ -70,32 +70,32 @@ obj.greeting = function() {
  * 
  * ※コールバック関数を用いて実装してください。
  */
-function calcFactory(val) {
+function calcFactory(val, callback) {
     return {
         plus: function(target) {
             const newVal = val + target;
-            console.log(`${val} + ${target} = ${newVal}`);
+            callback(`${val} + ${target} = ${newVal}`);
             val = newVal;
         },
         minus: function(target) {
             const newVal = val - target;
-            console.log(`${val} - ${target} = ${newVal}`);
+            callback(`${val} - ${target} = ${newVal}`);
             val = newVal;
         },
         multiply: function(target) {
             const newVal = val * target;
-            console.log(`${val} x ${target} = ${newVal}`);
+            callback(`${val} x ${target} = ${newVal}`);
             val = newVal;
         },
         divide: function(target) {
             const newVal = val / target;
-            console.log(`${val} / ${target} = ${newVal}`);
+            callback(`${val} / ${target} = ${newVal}`);
             val = newVal;
         }
     };
 }
 
-const calc = calcFactory(10);
+const calc = calcFactory(10, callback);
 calc.plus(5); 
 calc.minus(3); 
 calc.multiply(3);
